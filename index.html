@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111312" />
+    <meta
+      name="description"
+      content="A little strategy, a little luck. Play tic-tac-toe with a friend or challenge the computer."
+    />
+    <title>Tic Tac Toe — Good Game</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Good Game home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>good<span class="brand-light">game</span></span>
+        </a>
+        <div class="topbar-note">
+          <span class="online-dot" aria-hidden="true"></span>
+          <span>THE CLASSIC, REIMAGINED</span>
+        </div>
+      </header>
+
+      <section class="game-layout" aria-labelledby="page-title">
+        <div class="game-intro">
+          <p class="eyebrow"><span>01</span> &nbsp; A GAME FOR TWO (OR ONE)</p>
+          <h1 id="page-title">Three in a row.<br /><span>Good things follow.</span></h1>
+          <p class="intro-copy">
+            A little strategy, a little luck. Take turns, make your mark, and see
+            who gets to brag.
+          </p>
+
+          <div class="mode-picker" role="group" aria-label="Choose game mode">
+            <button class="mode-button" type="button" data-mode="computer" aria-pressed="true">
+              <span class="mode-icon" aria-hidden="true">✦</span>
+              <span>
+                <strong>Play the computer</strong>
+                <small>A clever little opponent</small>
+              </span>
+              <span class="mode-check" aria-hidden="true">✓</span>
+            </button>
+            <button class="mode-button" type="button" data-mode="friends" aria-pressed="false">
+              <span class="mode-icon friends-icon" aria-hidden="true">↗</span>
+              <span>
+                <strong>Play with a friend</strong>
+                <small>Pass the screen, take a turn</small>
+              </span>
+              <span class="mode-check" aria-hidden="true">✓</span>
+            </button>
+          </div>
+
+          <div class="how-to-play">
+            <span class="how-icon" aria-hidden="true">i</span>
+            <p><strong>How to play</strong><br />Get three of your marks in a line to win.</p>
+          </div>
+        </div>
+
+        <section class="game-card" aria-label="Tic-tac-toe game">
+          <div class="card-heading">
+            <div>
+              <p class="card-kicker">YOUR LITTLE ARENA</p>
+              <h2>Round <span id="round-number">01</span></h2>
+            </div>
+            <button class="icon-button" id="reset-round" type="button" aria-label="Restart round" title="Restart round">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 7v5h-5M4.6 9a7.5 7.5 0 0 1 12.6-2L20 12M4 17v-5h5m10.4 3a7.5 7.5 0 0 1-12.6 2L4 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="scoreboard" aria-label="Score">
+            <div class="score-player is-active" id="score-x">
+              <span class="score-symbol symbol-x">×</span>
+              <span class="score-name" id="name-x">YOU</span>
+              <span class="score-value" id="value-x">0</span>
+            </div>
+            <span class="score-divider" aria-hidden="true">:</span>
+            <div class="score-player" id="score-o">
+              <span class="score-symbol symbol-o">○</span>
+              <span class="score-name" id="name-o">CPU</span>
+              <span class="score-value" id="value-o">0</span>
+            </div>
+            <div class="draw-score">
+              <span>DRAWS</span>
+              <strong id="value-draws">0</strong>
+            </div>
+          </div>
+
+          <div class="turn-status" id="turn-status" role="status" aria-live="polite">
+            <span class="status-spark" aria-hidden="true">✳</span>
+            <span id="status-copy">Your turn — make it count.</span>
+          </div>
+
+          <div class="board" role="group" aria-label="Game board">
+            <button class="cell" type="button" data-cell="0" aria-label="Cell 1, empty"></button>
+            <button class="cell" type="button" data-cell="1" aria-label="Cell 2, empty"></button>
+            <button class="cell" type="button" data-cell="2" aria-label="Cell 3, empty"></button>
+            <button class="cell" type="button" data-cell="3" aria-label="Cell 4, empty"></button>
+            <button class="cell" type="button" data-cell="4" aria-label="Cell 5, empty"></button>
+            <button class="cell" type="button" data-cell="5" aria-label="Cell 6, empty"></button>
+            <button class="cell" type="button" data-cell="6" aria-label="Cell 7, empty"></button>
+            <button class="cell" type="button" data-cell="7" aria-label="Cell 8, empty"></button>
+            <button class="cell" type="button" data-cell="8" aria-label="Cell 9, empty"></button>
+          </div>
+
+          <div class="card-footer">
+            <span><span class="footer-dot" aria-hidden="true"></span> NO TIMER, JUST VIBES</span>
+            <button class="text-button" id="new-match" type="button">New match <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span>MADE FOR THE MOMENTS BETWEEN MOMENTS</span>
+        <span>✳ &nbsp; GOOD GAME, ALWAYS.</span>
+      </footer>
+    </main>
+  </body>
+</html>
